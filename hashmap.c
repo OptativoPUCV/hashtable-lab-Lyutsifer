@@ -24,7 +24,7 @@ struct HashMap {
 
 HashMap * createMap(long capacity) {
   long x= capacity;
-  HashMap* auxMap= (HashMap*) calloc(x,sizeof(HashMap));
+  HashMap* auxMap= (HashMap*) malloc (sizeof(HashMap) * x);
   auxMap->size= 0;
   auxMap->capacity= x;
   auxMap->current= -1;
