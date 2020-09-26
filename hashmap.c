@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     else
     {
-      for (int i=auxHash; map->buckets[i]!=NULL;i++)
+      for (int i=auxHash; 1;i++)
       {
         if (map->buckets[i]==NULL){
           map->buckets[i]=createPair( key, value);
