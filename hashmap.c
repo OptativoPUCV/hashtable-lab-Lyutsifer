@@ -22,20 +22,7 @@ struct HashMap {
 };
 
 
-HashMap * createMap(long capacity) {
-    HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap) * capacity);
-    //if(auxMap==NULL) return NULL;
-    /*for (auxMap->current=0;(auxMap->current) <capacity; (auxMap->current)++)
-    {
-      auxMap->buckets[auxMap->current]=NULL;
 
-    }*/
-    auxMap->size= 0;
-    auxMap->capacity= capacity;
-    auxMap->current= -1;
-  
-    return auxMap;
-}
 
 
 Pair * createPair( char * key,  void * value) {
@@ -73,7 +60,20 @@ void enlarge(HashMap * map) {
 }
 
 
+HashMap * createMap(long capacity) {
+    HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap) * capacity);
+    //if(auxMap==NULL) return NULL;
+    /*for (auxMap->current=0;(auxMap->current) <capacity; (auxMap->current)++)
+    {
+      auxMap->buckets[auxMap->current]=NULL;
 
+    }*/
+    auxMap->size= 0;
+    auxMap->capacity= capacity;
+    auxMap->current= -1;
+  
+    return auxMap;
+}
 
 void eraseMap(HashMap * map,  char * key) {    
 
