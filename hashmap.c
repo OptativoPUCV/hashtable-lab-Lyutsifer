@@ -25,11 +25,11 @@ struct HashMap {
 HashMap * createMap(long capacity) {
     HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap) * capacity);
     if(auxMap==NULL) return 0;
-    for (auxMap->current=0;(auxMap->current) <capacity; (auxMap->current)++)
+    /*for (auxMap->current=0;(auxMap->current) <capacity; (auxMap->current)++)
     {
       auxMap->buckets[auxMap->current]=NULL;
 
-    }
+    }*/
     auxMap->size= 0;
     auxMap->capacity= capacity;
     auxMap->current= -1;
