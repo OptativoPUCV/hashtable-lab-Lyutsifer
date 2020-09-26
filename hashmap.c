@@ -29,7 +29,7 @@ HashMap * createMap(long capacity) {
   auxMap->capacity= x;
   auxMap->current= -1;
   
-    return auxMap;
+    return NULL;
 }
 
 
