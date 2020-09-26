@@ -1,0 +1,6 @@
+Sat Sep 26 20:01:55 UTC 2020: 
+ hashmap.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+ tests:  0|6
+total_score: 0/70
+97aa50a
