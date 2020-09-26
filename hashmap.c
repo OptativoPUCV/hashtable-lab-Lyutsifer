@@ -62,7 +62,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         }
       }
     }
-  EXIT_SUCCESS;
+  
 }
 
 void enlarge(HashMap * map) {
