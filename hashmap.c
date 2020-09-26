@@ -23,12 +23,16 @@ struct HashMap {
 
 
 HashMap * createMap(long capacity) {
-  long x= capacity;
-  HashMap* auxMap= (HashMap*) malloc (sizeof(HashMap) * x);
-  if(auxMap==NULL) return 0;
-  auxMap->size= 0;
-  auxMap->capacity= x;
-  auxMap->current= -1;
+    HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap) * capacity);
+    if(auxMap==NULL) return 0;
+    /*for (auxMap->current=0, (auxMap->current) <capacity, (auxMap->current)++)
+    {
+      auxMap->buckets[auxMap->current]=NULL;
+
+    }*/
+    auxMap->size= 0;
+    auxMap->capacity= capacity;
+    auxMap->current= -1;
   
     return auxMap;
 }
