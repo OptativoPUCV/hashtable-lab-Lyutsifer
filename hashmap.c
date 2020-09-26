@@ -23,8 +23,6 @@ struct HashMap {
 
 
 
-
-
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
     new->key = key;
@@ -64,7 +62,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         }
       }
     }
-  
+    map->size++;
 }
 
 void enlarge(HashMap * map) {
