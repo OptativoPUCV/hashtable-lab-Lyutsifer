@@ -27,8 +27,7 @@ struct HashMap {
 
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
-    new->key = key;
-    new->value = value;
+    createPair(key, value);
     return new;
 }
 
@@ -49,8 +48,21 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
-
+    int auxHash= hash(key, map->capacity);
+    if(map->buckets[auxHash] == NULL)
+    {
+      map->buckets[auxHash]=createPair( key, value);
+    }
+    else
+    {
+      for (int i=auxHash; map->buckets[i]!=NULL;i++)
+      {
+        if (map->buckets[i]==NULL){
+          map->buckets[auxHash]=createPair( key, value); 
+        }
+      }
+    }
+  EXIT_SUCCESS;
 }
 
 void enlarge(HashMap * map) {
