@@ -26,3 +26,8 @@ Sat Sep 26 20:08:18 UTC 2020:
  tests:  0|6
 total_score: 0/70
 54dba10
+Sat Sep 26 20:14:51 UTC 2020: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+fc5690a

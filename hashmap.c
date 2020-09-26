@@ -25,11 +25,12 @@ struct HashMap {
 HashMap * createMap(long capacity) {
   long x= capacity;
   HashMap* auxMap= (HashMap*) malloc (sizeof(HashMap) * x);
+  if(auxMap==NULL)
   auxMap->size= 0;
   auxMap->capacity= x;
   auxMap->current= -1;
   
-    return NULL;
+    return auxMap;
 }
 
 
