@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     else
     {
-      for (int i=auxHash; i>1;i++)
+      for (long i=auxHash; i>0;i++)
       {
         if (map->buckets[i]==NULL){
           map->buckets[i]=createPair( key, value);
@@ -76,12 +76,7 @@ void enlarge(HashMap * map) {
 HashMap * createMap(long capacity) {
     HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap));
     auxMap->buckets= (Pair**) malloc(sizeof(Pair*) * capacity);
-    //if(auxMap==NULL) return NULL;
-    /*for (auxMap->current=0;(auxMap->current) <capacity; (auxMap->current)++)
-    {
-      auxMap->buckets[auxMap->current]=NULL;
 
-    }*/
     auxMap->size= 0;
     auxMap->capacity= capacity;
     auxMap->current= -1;
