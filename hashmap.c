@@ -23,8 +23,8 @@ struct HashMap {
 
 
 HashMap * createMap(long capacity) {
-  HashMap* auxMap= (HashMap*) calloc(capacity,sizeof(HashMap));
   long x= capacity;
+  HashMap* auxMap= (HashMap*) calloc(x,sizeof(HashMap));
   auxMap->size= 0;
   auxMap->capacity= x;
   auxMap->current= -1;
