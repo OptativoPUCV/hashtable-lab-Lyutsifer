@@ -59,14 +59,18 @@ void insertMap(HashMap * map, char * key, void * value) {
       {
         i= -1;  
       }
-      
+      if ( (double)map->size/(double)map->capacity > 0.7){
+        enlarge(map);
+      }
     }
+    
     map->current=i;
     map->size++;
 }
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    
 
 
 }
