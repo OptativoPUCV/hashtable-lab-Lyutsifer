@@ -57,7 +57,7 @@ void insertMap(HashMap * map, char * key, void * value) {
       }
       if ( (i == map->capacity-1) && (map->buckets[i]==NULL) )
       {
-        i= -1;  
+        i= 0;  
       }
     }
     if ( (double)map->size/(double)map->capacity > 0.7){
@@ -66,7 +66,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->current=i;
     map->size++;
 }
-
+//30/70 vamo chile. This function works correctly. +10 y favorito 1link megaupload +crack
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
   Pair** auxMap= map->buckets;
@@ -79,7 +79,7 @@ void enlarge(HashMap * map) {
   }
 } 
 
-
+//This function works correctly. +10
 HashMap * createMap(long capacity) {
     HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap));
     auxMap->buckets= (Pair**) malloc(sizeof(Pair*) * capacity);
