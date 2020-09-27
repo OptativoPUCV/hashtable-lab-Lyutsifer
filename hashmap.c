@@ -65,7 +65,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     if ( (double)map->size/(double)map->capacity > 0.7){
         enlarge(map);
     } 
-}//TIRAMISU ESTUVO AQUI o: para search map, la misma logica del insert, tengo que sacar hash, iterar por si no esta en su hash correspondiente por colision , luego usar la funcion is equal y retornar el value o no? sisii me habian dicho que era la mas complicada jaksdjkajs cual? searchMap, pero me dejaste tan clara la materia estoy iluminati de hecho he tenido errores super tontos jaskdjak cosas rebuscadas:'c uwu tranqui a todos nos pasa
+}//TIRAMISU estuvo aqui, muy buena ayudante. :D #antifunable yeey nwn
 
 //30/70 vamo chile. This function works correctly. +10 y favorito 1link megaupload +crack
 void enlarge(HashMap * map) {
@@ -96,9 +96,26 @@ void eraseMap(HashMap * map,  char * key) {
 
 
 }
-
+// y estoy viendo que te tirara un bucle en un momento
 void * searchMap(HashMap * map,  char * key) {   
-   /* long auxHash= */
+    long auxHash= hash(key, map-> capacity);
+    long i;
+    char* auxKey;
+    for (i=auxHash; i< map->capacity; i++ )
+    {
+      auxKey= map->buckets[i]->key;
+      if(map->buckets[i]==NULL) return NULL; //Key not found.
+      if (is_equal(key, auxKey))
+      {
+        map->current=i;
+        return map->buckets[i]->value;
+      }
+      if (i == map->capacity-1)
+      {
+        i= -1;  
+      }
+
+    }
 
     return NULL;
 }
