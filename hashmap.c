@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->buckets[i] = createPair (key,value);
         break;
       }
-      if ( (i == map->capacity-1) && (map->buckets[i]==NULL) )
+      if ( (i == map->capacity-1)  )
       {
         i= -1;  
       }
@@ -64,7 +64,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
     if ( (double)map->size/(double)map->capacity > 0.7){
         enlarge(map);
-    } //detalles no termino de entender eso, porque tira error en la casilla 1, estaba viendo el codigo pero no me termino de iluminar, es que no tiene sentido, normal seria tener problema en la primera casilla [i]==0 quizas una verificacion extra, 
+    } //Que frustrante jaskdj mmmm oyeeeee
 }
 //30/70 vamo chile. This function works correctly. +10 y favorito 1link megaupload +crack
 void enlarge(HashMap * map) {
