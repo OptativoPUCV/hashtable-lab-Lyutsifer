@@ -55,13 +55,13 @@ void insertMap(HashMap * map, char * key, void * value) {
     else
     {
       for (long i=auxHash; map->buckets[i]!=NULL;i++)
-      {
-        if (i== (map->capacity-1)){
-          i=0;
-        }
+      {  
         if (map->buckets[i]==NULL){
           map->buckets[i]=createPair (key, value);
         } 
+        if (i== (map->capacity-1)){
+          i=0;
+        }
       }
 
     }
