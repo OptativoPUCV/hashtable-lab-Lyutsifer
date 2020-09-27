@@ -70,15 +70,12 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
   Pair** auxMap= map->buckets;
-  map->buckets= (Pair**) realloc(map->buckets, map->capacity*2 *sizeof(Pair*));
+  map->buckets= (Pair**) malloc(map->capacity*2 *sizeof(Pair*)); // aca utiliza el malloc, para borrar lo anterior
   map->size=0;
   map->capacity*= 2; 
   for (long i=0; i<map->capacity/2; i++){
     if ( (auxMap[i]!=NULL) && (auxMap[i]->key!=NULL) )
-    insertMap(map, auxMap[i]->key, auxMap[i]->value); //soi buenisimo mish ahora si lo puedes hacer solito tay listo <3 suerte :3 graciaaaas suerte para ti tambien <3 arigatou asdasd F la manquie de pana asdasdas falto algo muy importante, que cosas tienes que insertar? si las puse po :c pero me falto ver si la key es null
-    //a eso iba :x insertaras los nulos? NO POOO ahi si:v ya estas dentro del for lo se pero cuando se tope con algo invalido, habia puesto que si alguno de esos 2 era NULL que pasara al siguiente indice :v y si hay dos nulos seguios?sigue saltandolos po, nuu trataria de insertar el siguienteaaaaah que loca mi tiaasdasds
-    
-     
+    insertMap(map, auxMap[i]->key, auxMap[i]->value);
   }
 } 
 
