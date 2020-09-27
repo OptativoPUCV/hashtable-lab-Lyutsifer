@@ -57,14 +57,14 @@ void insertMap(HashMap * map, char * key, void * value) {
       }
       if ( (i == map->capacity-1) && (map->buckets[i]==NULL) )
       {
-        i= 0;  
+        i= -1;  
       }
-    }
-    if ( (double)map->size/(double)map->capacity > 0.7){
-        enlarge(map);
     }
     map->current=i;
     map->size++;
+    if ( (double)map->size/(double)map->capacity > 0.7){
+        enlarge(map);
+    }
 }
 //30/70 vamo chile. This function works correctly. +10 y favorito 1link megaupload +crack
 void enlarge(HashMap * map) {
