@@ -190,3 +190,9 @@ Sun Sep 27 21:10:16 UTC 2020:
  tests:  2|5
 total_score: 20/70
 9f3c8ab
+Sun Sep 27 21:15:41 UTC 2020: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 20/70
+c257ed5
