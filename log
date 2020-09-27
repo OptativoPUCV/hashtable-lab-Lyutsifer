@@ -306,3 +306,9 @@ Sun Sep 27 23:54:34 UTC 2020:
  1 file changed, 20 insertions(+), 3 deletions(-)
  tests:  0|0
 6f2fc29
+Sun Sep 27 23:58:12 UTC 2020: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  9|2
+total_score: 50/70
+624818a

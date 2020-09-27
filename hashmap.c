@@ -96,15 +96,15 @@ void eraseMap(HashMap * map,  char * key) {
 
 
 }
-// y estoy viendo que te tirara un bucle en un momento
+//true ese es otro error asdasd porque me dice holoooo es el caso de prueba
 void * searchMap(HashMap * map,  char * key) {   
     long auxHash= hash(key, map-> capacity);
     long i;
     char* auxKey;
     for (i=auxHash; i< map->capacity; i++ )
     {
-      auxKey= map->buckets[i]->key;
-      if(map->buckets[i]==NULL) return NULL; //Key not found.
+      if( (map->buckets[i]==NULL)||(map->buckets[i]->key==NULL) ) return NULL; //Key not found.
+      auxKey= map->buckets[i]->key;// ahora si la key es nula?asdasdjaksd no se que hice :C uwu
       if (is_equal(key, auxKey))
       {
         map->current=i;
