@@ -70,7 +70,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
   Pair** auxMap= map->buckets;
-  map->buckets= (Pair**) malloc(map->capacity*2 *sizeof(Pair*)); // aca utiliza el malloc, para borrar lo anterior
+  map->buckets= (Pair**) malloc(map->capacity*2 *sizeof(Pair*));
   map->size=0;
   map->capacity*= 2; 
   for (long i=0; i<map->capacity/2; i++){
