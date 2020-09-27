@@ -55,7 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->buckets[i] = createPair (key,value);
         break;
       }
-      if ( (i == map->capacity-1)  )
+      if (( (i == map->capacity-1)&&(map->buckets[i]==NULL)) || ((i == map->capacity-1)&&(map->buckets[i]->key==NULL)))
       {
         i= -1;  
       }
@@ -64,7 +64,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
     if ( (double)map->size/(double)map->capacity > 0.7){
         enlarge(map);
-    } //Que frustrante jaskdj mmmm oyeeeee
+    } // pero te explico porque es solo lo primero, pq en el if anterior ya se comprobo que existe algo
 }
 //30/70 vamo chile. This function works correctly. +10 y favorito 1link megaupload +crack
 void enlarge(HashMap * map) {
