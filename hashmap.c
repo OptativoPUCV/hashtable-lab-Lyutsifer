@@ -59,21 +59,25 @@ void insertMap(HashMap * map, char * key, void * value) {
       {
         i= -1;  
       }
-      if ( (double)map->size/(double)map->capacity > 0.7){
-        enlarge(map);
-      }
     }
-    
+    if ( (double)map->size/(double)map->capacity > 0.7){
+        enlarge(map);
+    }
     map->current=i;
     map->size++;
 }
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    
-
-
-}
+  Pair** auxMap= map->buckets;
+  map->buckets= (Pair**) realloc(map->buckets, map->capacity*2 *sizeof(Pair*));
+  map->size=0;
+  map->capacity*= 2; 
+  for (long i=0; i<map->capacity/2; i++){
+    insertMap(map, auxMap[i]->key, auxMap[i]->value); //soi buenisimo mish ahora si lo puedes hacer solito tay listo <3 suerte :3 graciaaaas suerte para ti tambien <3 arigatou asdasd
+     
+  }
+} 
 
 
 HashMap * createMap(long capacity) {
