@@ -74,7 +74,10 @@ void enlarge(HashMap * map) {
   map->size=0;
   map->capacity*= 2; 
   for (long i=0; i<map->capacity/2; i++){
-    insertMap(map, auxMap[i]->key, auxMap[i]->value); //soi buenisimo mish ahora si lo puedes hacer solito tay listo <3 suerte :3 graciaaaas suerte para ti tambien <3 arigatou asdasd
+    if ( (auxMap[i]==NULL) || (auxMap[i]->key==NULL) )i++; 
+    insertMap(map, auxMap[i]->key, auxMap[i]->value); //soi buenisimo mish ahora si lo puedes hacer solito tay listo <3 suerte :3 graciaaaas suerte para ti tambien <3 arigatou asdasd F la manquie de pana asdasdas falto algo muy importante, que cosas tienes que insertar? si las puse po :c pero me falto ver si la key es null
+    //a eso iba :x insertaras los nulos? NO POOO ahi si:v pero quee
+    
      
   }
 } 
