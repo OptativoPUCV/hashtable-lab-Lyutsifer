@@ -98,6 +98,7 @@ void eraseMap(HashMap * map,  char * key) {
   if(searchMap(map, key)){
   map->buckets[map->current]->key =NULL;
   map->size--;
+  map->current++;
   return; 
   }
 }
@@ -142,7 +143,7 @@ void * nextMap(HashMap * map) {
 
       if(map->buckets[i]->key /*&& map->buckets[i]->value*/){
         map->current= i;
-        
+
       return map->buckets[i]->value; 
       }
     }
