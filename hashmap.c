@@ -93,7 +93,10 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+  //long auxHash= hash(key, map->capacity);
+  searchMap(map, key);
+  map->buckets[map->current]->key =NULL;
+  map->size--;
 
 }
 //TIRAMISU estuvo aqui.
@@ -120,7 +123,7 @@ void * searchMap(HashMap * map,  char * key) {
 
     return NULL;
 }
-
+// 
 void * firstMap(HashMap * map) {
 
     return NULL;
