@@ -130,13 +130,22 @@ void * firstMap(HashMap * map) {
   for (long i=0; i<map->capacity;i++){
 
     if(map->buckets[i]->key /*&& map->buckets[i]->value*/){
+      map->current= i;
       return map->buckets[i]->value;
     }
-  }
-    return NULL;
+  } 
+  return NULL;
 }
 
 void * nextMap(HashMap * map) {
+    for(long i=map->current+1; i< map->capacity; i++ ){
+
+      if(map->buckets[i]->key /*&& map->buckets[i]->value*/){
+        map->current= i;
+        
+      return map->buckets[i]->value; 
+      }
+    }
 
     return NULL;
 }
