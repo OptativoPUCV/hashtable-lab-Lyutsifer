@@ -98,7 +98,7 @@ void eraseMap(HashMap * map,  char * key) {
   if(searchMap(map, key)){
   map->buckets[map->current]->key =NULL;
   map->size--;
-  map->current++;
+  map->current= -1;
   return; 
   }
 }
@@ -126,7 +126,7 @@ void * searchMap(HashMap * map,  char * key) {
 
     return NULL;
 }
-// 
+// en ambos falta cuando es != null
 void * firstMap(HashMap * map) {
   for (long i=0; i<map->capacity;i++){
 
