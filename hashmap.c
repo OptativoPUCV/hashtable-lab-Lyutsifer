@@ -93,9 +93,10 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  searchMap(map, key);
+  if(searchMap(map, key)){
   map->buckets[map->current]->key =NULL;
-  map->size--; 
+  map->size--;
+  }
 }
 //TIRAMISU estuvo aqui.
 void * searchMap(HashMap * map,  char * key) {   
