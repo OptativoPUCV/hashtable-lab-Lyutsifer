@@ -80,7 +80,7 @@ void enlarge(HashMap * map) {
   }
 } 
 
-//This function works correctly. +10
+//This function works correctly. +10 
 HashMap * createMap(long capacity) {
     HashMap* auxMap= (HashMap*) malloc(sizeof(HashMap));
     auxMap->buckets= (Pair**) malloc(sizeof(Pair*) * capacity);
@@ -93,11 +93,9 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  //long auxHash= hash(key, map->capacity);
   searchMap(map, key);
   map->buckets[map->current]->key =NULL;
-  map->size--;
-
+  map->size--; 
 }
 //TIRAMISU estuvo aqui.
 void * searchMap(HashMap * map,  char * key) {   
