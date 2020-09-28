@@ -91,11 +91,14 @@ HashMap * createMap(long capacity) {
   
     return auxMap;
 }
-
+// llevas 2 estrellitas, es el value el que se borra :3 nono, el profe dijo que invalidara la key, lo dice en la pauta del READMI.md <3 :c pero la key se invalida si no tiene value mira 
+/*No elimine el par, sólo invalídelo asignando NULL a la clave (pair->key=NULL). o: ah bueno si lo dice literal, excelente jaksdjka gracias = <3 quiero decir una cosita nomas asdasd cual ? los casos, sip estan incompletosdel laboratorio siempre traeran problema para las tareas :3 si es que algun momento ves que borrar te trae problema, recuerda eso ajaja sisi lo voy a dejar mas completo <3 
+Recuerde actualizar la variable size. */
 void eraseMap(HashMap * map,  char * key) {    
   if(searchMap(map, key)){
   map->buckets[map->current]->key =NULL;
   map->size--;
+  return; 
   }
 }
 //TIRAMISU estuvo aqui.
@@ -124,7 +127,12 @@ void * searchMap(HashMap * map,  char * key) {
 }
 // 
 void * firstMap(HashMap * map) {
-
+  for (long i=0; i<map->capacity;i++){
+    
+    if(map->buckets[i]->key || map->buckets[i]->value){
+      return map->buckets[i]->value;
+    }
+  }
     return NULL;
 }
 
