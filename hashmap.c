@@ -129,7 +129,7 @@ void * searchMap(HashMap * map,  char * key) {
 void * firstMap(HashMap * map) {
   for (long i=0; i<map->capacity;i++){
 
-    if(map->buckets[i]->key && map->buckets[i]->value){
+    if(map->buckets[i]->key /*&& map->buckets[i]->value*/){
       return map->buckets[i]->value;
     }
   }
